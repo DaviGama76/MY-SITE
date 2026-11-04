@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="Escript.js" defer></script>
+</head>
+<body>
+     <section id="sobre">
+        <h2>Sobre</h2>
+        <p>Informações sobre mim e meu trabalho.</p>
+    </section>
+    <div Class="menu">
+        <nav class="menu-principal">
+    <ul>
+        <li><button type="button" onclick="window.location.href='Index.html'" class="butao">Início</button></li>
+        <li><button type="button" onclick="window.location.href='sobre.html'" class="butao">Sobre</button></li>
+        <li><button type="button" onclick="window.location.href='curiosidades.html'" class="butao">Curiosidades</button></li>
+        <li><button type="button" onclick="window.location.href='hobbies.html'" class="butao">Hobbies</button></li>
+    </ul>
+</nav>
+    </div>
+    <div class="PlayerAudio">
+        <button class="AudioPlay" id="audioPlay" type="button" aria-label="Tocar música" aria-pressed="false">
+            <span id="audioPlayIcon" aria-hidden="true">&#9654;</span>
+        </button>
+        <div class="AudioControls">
+            <div class="AudioTimes">
+                <span id="audioCurrent">0:00</span>
+                <span id="audioDuration">0:00</span>
+            </div>
+            <input class="AudioProgress" id="audioProgress" type="range" min="0" max="0" step="0.1" value="0" aria-label="Progresso da música">
+        </div>
+        <label class="AudioVolumeLabel" for="audioVolume">Volume</label>
+        <input class="AudioVolume" id="audioVolume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume da música">
+        <span class="AudioStatus" id="audioStatus" role="status" aria-live="polite"></span>
+        <audio id="siteAudio" autoplay loop preload="metadata">
+            <source src="Midia/Dreamcore.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</body>
+</html>

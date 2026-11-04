@@ -1,0 +1,228 @@
+:root {
+    --cor-fundo-menu: #442856;
+    --cor-texto: #6cfb9c;
+    --cor-destaque: #00ff40;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #000;
+    background-image: url("Midia/FundoPg.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.caixatop{
+    padding: 24px 16px;
+    text-align: center;
+}
+.Titulo{
+    margin: 0;
+    color: var(--cor-texto);
+    font-size: 2.25rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+.menu{
+    width: 100%;
+    height: 50px;
+    background-color: var(--cor-fundo-menu);
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    
+    
+
+}
+.menu-principal{
+    width: 100%;
+}
+.menu-principal ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.butao{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--cor-fundo-menu);
+    color: var(--cor-texto);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.Foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 22%;
+}
+.ConteudoHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 16px;
+}
+.FotoPerfil{
+    width: 100%;
+    height: auto;
+}
+.TextoC{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    text-align: left;
+}
+@media (max-width: 600px){
+    .ConteudoHome{
+        flex-direction: column;
+    }
+    .Foto{
+        width: min(100%, 320px);
+        flex-basis: auto;
+    }
+    .FotoPerfil{
+        width: 100%;
+    }
+    .TextoC{
+        text-align: center;
+    }
+}
+.CaixaTexto{
+    flex: 1;
+    min-width: 0;
+    max-width: 600px;
+    color: var(--cor-fundo-menu);
+    text-align: justify; 
+}
+.CaixaRolagem{
+    width: min(70%, 900px);
+    height: 70vh;
+    box-sizing: border-box;
+    margin: 24px auto;
+    padding: 24px;
+    overflow-y: auto;
+    background: rgba(15, 8, 24, 0.9);
+    border: 1px solid var(--cor-destaque);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    scrollbar-color: var(--cor-destaque) var(--cor-fundo-menu);
+}
+.topico{
+    padding: 20px;
+    color: var(--cor-texto);
+    background: rgba(68, 40, 86, 0.75);
+    border: 1px solid rgba(108, 251, 156, 0.35);
+    border-radius: 8px;
+    line-height: 1.7;
+}
+.topico h2{
+    margin-top: 0;
+}
+@media (max-width: 600px){
+    .CaixaRolagem{
+        width: calc(100% - 32px);
+        height: 60vh;
+        padding: 14px;
+    }
+    .topico{
+        padding: 16px;
+    }
+}
+.PlayerAudio{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(460px, calc(100% - 32px));
+    box-sizing: border-box;
+    margin: 24px auto;
+    padding: 12px 14px;
+    background-color: var(--cor-fundo-menu);
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    color: var(--cor-texto);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+.PlayerAudio audio{
+    display: none;
+}
+.AudioPlay{
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 50%;
+    background-color: #000;
+    color: var(--cor-texto);
+    font-size: 16px;
+    cursor: pointer;
+}
+.AudioPlay:hover,
+.AudioPlay:focus-visible{
+    background-color: var(--cor-destaque);
+    color: #000;
+}
+.AudioPlay span{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+.AudioPlay img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.AudioControls{
+    flex: 1;
+    min-width: 0;
+}
+.AudioTimes{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+}
+.AudioProgress,
+.AudioVolume{
+    accent-color: var(--cor-destaque);
+    cursor: pointer;
+}
+.AudioProgress{
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 0;
+}
+.AudioVolumeLabel{
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+}
+.AudioVolume{
+    width: 72px;
+    margin: 0;
+}
+.AudioStatus{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}

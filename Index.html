@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My site cool</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <script src="Escript.js" defer></script>
+</head>
+<body>
+    <div class="caixatop">
+        <h1 class="Titulo" aria-label="Bem-vindo ao meu site!">𝓑𝓮𝓶-𝓿𝓲𝓷𝓭𝓸 𝓪𝓸 𝓶𝓮𝓾 𝓼𝓲𝓽𝓮!</h1>
+    </div>
+    <div Class="menu">
+        <nav class="menu-principal">
+    <ul>
+        <li><button type="button" onclick="window.location.href='Index.html'" class="butao">Início</button></li>
+        <li><button type="button" onclick="window.location.href='sobre.html'" class="butao">Sobre</button></li>
+        <li><button type="button" onclick="window.location.href='curiosidades.html'" class="butao">Curiosidades</button></li>
+        <li><button type="button" onclick="window.location.href='hobbies.html'" class="butao">Hobbies</button></li>
+    </ul>
+</nav>
+    </div>
+    <div class="PlayerAudio">
+        <button class="AudioPlay" id="audioPlay" type="button" aria-label="Tocar música" aria-pressed="false">
+            <span id="audioPlayIcon" aria-hidden="true">&#9654;</span>
+        </button>
+        <div class="AudioControls">
+            <div class="AudioTimes">
+                <span id="audioCurrent">0:00</span>
+                <span id="audioDuration">0:00</span>
+            </div>
+            <input class="AudioProgress" id="audioProgress" type="range" min="0" max="0" step="0.1" value="0" aria-label="Progresso da música">
+        </div>
+        <label class="AudioVolumeLabel" for="audioVolume">Volume</label>
+        <input class="AudioVolume" id="audioVolume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume da música">
+        <span class="AudioStatus" id="audioStatus" role="status" aria-live="polite"></span>
+        <audio id="siteAudio" autoplay loop preload="metadata">
+            <source src="Midia/Dreamcore.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="ConteudoHome">
+    <div class="Foto">
+        <img src="Midia/Foto.png" alt="Foto de perfil do site" class="FotoPerfil">
+    </div>
+        <div class="CaixaTexto">
+           <p class="TextoC">𝑩𝒆𝒎-𝒗𝒊𝒏𝒅𝒐 𝒂𝒐 𝒎𝒆𝒖 𝒔𝒊𝒕𝒆! 𝑨𝒒𝒖𝒊 𝒗𝒐𝒄𝒆̂ 𝒆𝒏𝒄𝒐𝒏𝒕𝒓𝒂𝒓𝒂́ 𝒊𝒏𝒇𝒐𝒓𝒎𝒂𝒄̧𝒐̃𝒆s 𝒔𝒐𝒃𝒓𝒆 𝒎𝒊𝒎, 𝒎𝒆𝒖s 𝒉𝒐𝒃𝒃𝒊𝒆s 𝒆 𝒄𝒖𝒓𝒊𝒐𝒔𝒊𝒅𝒂𝒅𝒆s 𝒊𝒏𝒕𝒆𝒓𝒆𝒔𝒔𝒂𝒏𝒕𝒆s. 𝑬𝒙𝒑𝒍𝒐𝒓𝒆 𝒂𝒔 𝒅𝒊𝒇𝒆𝒓𝒆𝒏𝒕𝒆s 𝒔𝒆𝒄̧𝒐̃𝒆s 𝒑𝒂𝒓𝒂 𝒔𝒂𝒃𝒆𝒓 𝒎𝒂𝒊𝒔!</p> 
+        </div>
+        <div class="Foto">  
+         <img src="Midia/fundo1.gif" alt="Imagem de emoji" class="Fundo"> 
+        </div>
+    </div>
+</body>
+</html>
