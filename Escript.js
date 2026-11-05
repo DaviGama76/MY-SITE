@@ -74,31 +74,32 @@ const audio = document.getElementById("siteAudio");
             status.textContent = "Clique em reproduzir para iniciar a música seu jeca.";
         });
 
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            let lastParticleTime = 0;
-            let lastParticleX = 0;
-            let lastParticleY = 0;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let lastParticleTime = 0;
+        let lastParticleX = 0;
+        let lastParticleY = 0;
 
-            document.addEventListener("pointermove", (event) => {
-                if (event.pointerType !== "mouse") return;
+        document.addEventListener("pointermove", (event) => {
+            if (event.pointerType !== "mouse") return;
 
-                const now = performance.now();
-                const distance = Math.hypot(event.clientX - lastParticleX, event.clientY - lastParticleY);
-                if (now - lastParticleTime < 35 || distance < 8) return;
+            const now = performance.now();
+            const distance = Math.hypot(event.clientX - lastParticleX, event.clientY - lastParticleY);
+            if (now - lastParticleTime < 35 || distance < 8) return;
 
-                const particle = document.createElement("span");
-                particle.className = "EfeitoCursor";
-                particle.setAttribute("aria-hidden", "true");
-                particle.textContent = "✦";
-                particle.style.left = `${event.clientX}px`;
-                particle.style.top = `${event.clientY}px`;
-                particle.style.setProperty("--desvio-x", `${Math.random() * 36 - 18}px`);
-                particle.style.setProperty("--desvio-y", `${Math.random() * 36 - 18}px`);
-                document.body.append(particle);
-                particle.addEventListener("animationend", () => particle.remove(), { once: true });
+            const particle = document.createElement("span");
+            particle.className = prefersReducedMotion
+                ? "EfeitoCursor EfeitoCursor--reduzido"
+                : "EfeitoCursor";
+            particle.setAttribute("aria-hidden", "true");
+            particle.textContent = "✦";
+            particle.style.left = `${event.clientX}px`;
+            particle.style.top = `${event.clientY}px`;
+            particle.style.setProperty("--desvio-x", `${Math.random() * 36 - 18}px`);
+            particle.style.setProperty("--desvio-y", `${Math.random() * 36 - 18}px`);
+            document.body.append(particle);
+            particle.addEventListener("animationend", () => particle.remove(), { once: true });
 
-                lastParticleTime = now;
-                lastParticleX = event.clientX;
-                lastParticleY = event.clientY;
-            });
-        }
+            lastParticleTime = now;
+            lastParticleX = event.clientX;
+            lastParticleY = event.clientY;
+        });

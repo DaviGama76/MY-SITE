@@ -2,7 +2,7 @@
     --cor-fundo-menu: #442856;
     --cor-texto: #6cfb9c;
     --cor-destaque: #00ff40;
-    --cor-cursor: #00fff2;
+    --cor-cursor: #00ff40;
 }
 
 body{
@@ -32,6 +32,17 @@ body{
         opacity: 0;
         transform: translate(calc(-50% + var(--desvio-x)), calc(-50% + var(--desvio-y))) scale(0.2);
     }
+}
+@keyframes brilhoCursorReduzido{
+    from{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 0;
+    }
+}
+.EfeitoCursor--reduzido{
+    animation: brilhoCursorReduzido 400ms ease-out forwards;
 }
 .caixatop{
     padding: 24px 16px;
@@ -75,7 +86,11 @@ body{
     color: var(--cor-texto);
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.butao:hover,
+.butao:focus-visible{
+    transform: scale(1.08);
 }
 #hobbies,
 #sobre,
@@ -101,6 +116,45 @@ body{
 }
 #contatos p{
     line-height: 1.6;
+}
+.LayoutSobre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: calc(100% - 32px);
+    max-width: 1500px;
+    margin: 24px auto;
+}
+.LayoutSobre #sobre{
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+.ImagemSobre{
+    flex: 0 1 18%;
+    max-width: 220px;
+    margin: 0;
+}
+.ImagemSobre img{
+    display: block;
+    width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+}
+.LayoutHobbies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: calc(100% - 32px);
+    max-width: 1200px;
+    margin: 24px auto;
+}
+.LayoutHobbies #hobbies{
+    flex: 1;
+    min-width: 0;
+    margin: 0;
 }
 .Foto{
     display: flex;
@@ -129,6 +183,13 @@ body{
     text-align: left;
 }
 @media (max-width: 600px){
+    .LayoutHobbies{
+        flex-direction: column;
+    }
+    .LayoutHobbies .DecoracaoCuriosidades{
+        width: min(100%, 220px);
+        flex-basis: auto;
+    }
     .ConteudoHome{
         flex-direction: column;
     }
@@ -147,7 +208,7 @@ body{
     flex: 1;
     min-width: 0;
     max-width: 600px;
-    color: var(--cor-fundo-menu);
+    color: var(--cor-texto);
     text-align: justify; 
 }
 .CaixaRolagem{
@@ -202,6 +263,13 @@ body{
     margin-top: 0;
 }
 @media (max-width: 600px){
+    .LayoutSobre{
+        flex-direction: column;
+    }
+    .ImagemSobre{
+        width: min(100%, 220px);
+        flex-basis: auto;
+    }
     .LayoutCuriosidades{
         flex-direction: column;
     }
